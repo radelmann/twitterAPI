@@ -1,0 +1,16 @@
+{
+  "name": "twitterAPI",
+  "version": "1.0.0",
+  "description": "twitter api & angular project",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "radelmann",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0"
+  }
+}
