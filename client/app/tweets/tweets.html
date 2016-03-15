@@ -1,7 +1,17 @@
-<div id='container' ng-model='twitteAPI.tweets' >
-  <h1>user tweets</h1>
-  <div ng-repeat='tweet in data.tweets'>
+<div id='container' ng-model='twitterAPI.tweets' >
+  
+  <form name='tweetsForm' ng-submit="submitSearch()" novalidate>
     
+    <input name='screenName' type="text"
+    ng-model="data.screenName"
+    placeholder="Enter twitter handle here" required>
+    <button type="submit" value="Search" ng-disabled='shortlyForm.$invalid'>
+    Search
+    </button>
+  </form>
+  
+  <div ng-repeat='tweet in data.tweets'>
+  
     <span>{{ tweet.text }} </span>
     
   </div>

@@ -2,8 +2,7 @@ angular.module('twitterAPI.services', [])
 
 .factory('tweets', function($http) {
 
-  var get = function() {
-    var screenName = 'bobman10';
+  var get = function(screenName) {
     return $http({
         method: 'GET',
         url: '/api/get/'+screenName
