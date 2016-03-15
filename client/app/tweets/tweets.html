@@ -1,9 +1,8 @@
-<div id='container' ng-model='twitter-api.tweets' >
+<div id='container' ng-model='twitteAPI.tweets' >
   <h1>user tweets</h1>
   <div ng-repeat='tweet in data.tweets'>
     
-    <div>{{ tweet.sceen_name }}</div>
-    <div>{{ tweet.text }}</div>
+    <span>{{ tweet.text }} </span>
     
   </div>
 </div>

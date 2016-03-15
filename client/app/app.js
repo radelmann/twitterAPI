@@ -1,6 +1,6 @@
-angular.module('twitter-api', [
-    'twitter-api.services',
-    'twitter-api.tweets',
+angular.module('twitterAPI', [
+    'twitterAPI.services',
+    'twitterAPI.tweets',
     'ngRoute'
   ])
   .config(function($routeProvider, $httpProvider) {
