@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //set static client route
-app.use(express.static('client');
+app.use(express.static('client'));
 
 require('./routes.js')(app);
 

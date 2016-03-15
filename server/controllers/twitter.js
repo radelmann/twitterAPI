@@ -1,12 +1,4 @@
 var env = require('../config/env.js')
-
-var error = function(err, response, body) {
-  console.log('ERROR [%s]', JSON.stringify(err));
-};
-var success = function(data) {
-  console.log('Data [%s]', data);
-};
-''
 var config = {
   "consumerKey": env.twitter.consumerKey,
   "consumerSecret": env.twitter.consumerSecret,
@@ -18,4 +10,18 @@ var config = {
 var Twitter = require('twitter-node-client').Twitter;
 var twitter = new Twitter(config);
 
-twitter.getUserTimeline({ screen_name: 'bobman10', count: '10'}, error, success);
+module.exports = {
+  get: function(req, res, next) {
+    var screenName = req.params.screenName;
+    twitter.getUserTimeline({
+      screen_name: screenName,
+      count: '20'
+    }, function(err) {
+      res.status(err.statusCode || 500);
+      res.json(err);
+    }, function(data) {
+      res.status(200);
+      res.json(data);
+    });
+  }
+}
