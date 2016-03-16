@@ -15,7 +15,7 @@ module.exports = {
     var screenName = req.params.screenName;
     twitter.getUserTimeline({
       screen_name: screenName,
-      count: '20'
+      count: '50'
     }, function(err) {
       res.status(err.statusCode || 500);
       res.json(err);
