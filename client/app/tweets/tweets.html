@@ -17,12 +17,11 @@
         <input class="checkbox" type="checkbox" name="displayPhotos" ng-model="data.displayPhotos" />Display Photos
 
         <button type="submit" value="Submit" class='btn btn-primary pull-right' ng-disabled='shortlyForm.$invalid'>
-        Search
+        Submit
         </button>
       </form>
     </div>
-    
-    <div class="col-xs-4 user-info">
+        <div class="col-xs-4 user-info">
       <div class="clearfix">
         <img class="pull-left" src="{{ data.userPhoto }}">
         <span><big><strong>{{data.userName}}</big></strong></span><br>
@@ -36,7 +35,7 @@
         <div class="tweet" ng-repeat='tweet in data.tweets | filter:retweetFilterFn'>
           <span>{{ tweet.text }}</span><br>
           
-          <img src="{{ tweet.img }}" ng-hide="tweet.img === ''" />
+          <img src="{{ tweet.img }}" ng-hide="tweet.img == '' ||  data.displayPhotos == false" />
           <hr>
         </div>
       </div>

@@ -15,14 +15,15 @@ angular.module('twitterAPI.tweets', [])
       tweets.get($scope.data.screenName).then(function(data) {
         console.dir(data);
 
-        if (data.length > 0 && $scope.data.displayPhotos === true) {
-          //check for image in tweet
-          for (var i = 0; i < data.length; i++) {
-            if (data[i].entities.media) {
-              data[i].img = data[i].entities.media[0].media_url;
-            } else {
-              data[i].img = "";
-            }
+
+        //check retweet filter
+        //check for image in tweet
+        for (var i = 0; i < data.length; i++) {
+
+          if ((data[i].entities.media) && ($scope.data.displayPhotos)) {
+            data[i].img = data[i].entities.media[0].media_url;
+          } else {
+            data[i].img = "";
           }
         }
 
