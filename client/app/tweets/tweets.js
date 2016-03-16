@@ -35,13 +35,17 @@ angular.module('twitterAPI.tweets', [])
           $scope.data.userName = "";
           $scope.data.userHandle = "";
           $scope.data.userPhoto = "";
-          $scope.data.userDescription = "";          
+          $scope.data.userDescription = "";
           $scope.data.tweets = [];
         }
       });
     };
 
     $scope.retweetFilterFn = function(tweet) {
-      return tweet.retweet_count >= parseInt($scope.data.retweetFilter);
+      var filter = parseInt($scope.data.retweetFilter);
+      if ((filter > -1) && (filter < 10000)) {
+        return tweet.retweet_count >= parseInt($scope.data.retweetFilter);
+      }
+      return true;
     };
   });
