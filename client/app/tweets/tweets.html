@@ -1,23 +1,42 @@
-<div id='container' ng-model='twitterAPI.tweets' >
+<div class='container' ng-model='twitterAPI.tweets' >
   
-  <form name='tweetsForm' ng-submit="submitSearch()" novalidate>
+  <div class="row">
     
-    <input name='screenName' type="text"
-    ng-model="data.screenName"
-    placeholder="Enter twitter handle here" required>
-    <button type="submit" value="Search" ng-disabled='shortlyForm.$invalid'>
-    Search
-    </button>
-  </form>
-   
-  <!-- <div>
-    <img src="{{ data.userPhoto }}">
-    <span>{{ data.userName }}</span>
-    <span>{{ data.userDescription }}</span>
-  </div> -->
 
-  <div style="width:400px;" ng-repeat='tweet in data.tweets'>
-    <span>{{ tweet.text }}</span><br>
-    <img style="width:400px;" src="{{ tweet.img }}">
-  </div>
+    <div class="col-xs-3">
+      <form name='tweetsForm' ng-submit="submitSearch()">
+        
+        <input class='form-control' name='screenName' type="text"
+        ng-model="data.screenName" placeholder="twitter handle" required></input>
+        
+
+
+        <button type="submit" value="Submit" class='btn btn-primary btn-block' ng-disabled='shortlyForm.$invalid'>
+        Search
+        </button>
+
+      </form>
+      
+
+      
+      <div>
+        <!-- <img src="{{ data.userPhoto }}"> -->
+        <span>data.userPhoto</span><br>
+        <span>data.userName</span><br>
+        <span>data.userDescription</span>
+      </div>
+      
+    </div>
+    
+    <div class="col-xs-6">
+      <div class="tweets ">
+        <div class="tweet" ng-repeat='tweet in data.tweets'>
+          <span>{{ tweet.text }}</span><br>
+          <img src="{{ tweet.img }}">
+        </div>
+      </div>
+      
+    </div>
+  
+  
 </div>
