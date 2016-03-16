@@ -13,8 +13,6 @@ angular.module('twitterAPI.tweets', [])
 
     $scope.submitSearch = function() {
       tweets.get($scope.data.screenName).then(function(data) {
-        console.dir(data);
-
         if (data.length > 0) {
           //check for image in tweet
           for (var i = 0; i < data.length; i++) {
