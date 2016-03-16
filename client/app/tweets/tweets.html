@@ -9,10 +9,15 @@
     Search
     </button>
   </form>
-  
-  <div ng-repeat='tweet in data.tweets'>
-  
-    <span>{{ tweet.text }} </span>
-    
+   
+  <!-- <div>
+    <img src="{{ data.userPhoto }}">
+    <span>{{ data.userName }}</span>
+    <span>{{ data.userDescription }}</span>
+  </div> -->
+
+  <div style="width:400px;" ng-repeat='tweet in data.tweets'>
+    <span>{{ tweet.text }}</span><br>
+    <img style="width:400px;" src="{{ tweet.img }}">
   </div>
 </div>
