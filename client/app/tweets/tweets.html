@@ -1,7 +1,7 @@
 <div class='container' ng-model='twitterAPI.tweets' >
   <div class="row">
-
-    <div class="col-xs-11 fixed">
+      
+    <div class="col-xs-11 header-fixed">
 
       <form class="form-inline" name='tweetsForm' ng-submit="submitSearch()">
         
@@ -12,12 +12,11 @@
         
         <label>Retweet Filter:</label>
         <input class="form-control" id='retweetFilter' type="text"
-        ng-model="data.retweetFilter"
-        placeholder="Enter twitter handle here" required>
+        ng-model="data.retweetFilter" required>
 
         <input class="checkbox" type="checkbox" name="displayPhotos" ng-model="data.displayPhotos" />Display Photos
 
-        <button type="submit" value="Submit" class='btn btn-primary' ng-disabled='shortlyForm.$invalid'>
+        <button type="submit" value="Submit" class='btn btn-primary pull-right' ng-disabled='shortlyForm.$invalid'>
         Search
         </button>
       </form>
