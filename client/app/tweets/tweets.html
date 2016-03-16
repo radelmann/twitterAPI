@@ -1,24 +1,27 @@
 <div class='container' ng-model='twitterAPI.tweets' >
-  
   <div class="row">
-    
 
-    <div class="col-xs-3">
-      <form name='tweetsForm' ng-submit="submitSearch()">
+    <div class="col-xs-11">
+
+      <form class="form-inline" name='tweetsForm' ng-submit="submitSearch()">
         
-        <input class='form-control' name='screenName' type="text"
-        ng-model="data.screenName" placeholder="twitter handle" required></input>
+        <input class="form-control" name='screenName' type="text"
+        ng-model="data.screenName"
+        placeholder="Enter twitter handle here" required>
         
+        <input class="form-control" name='retweetFilter' type="text"
+        ng-model="data.retweetFilter"
+        placeholder="Enter twitter handle here" required>
 
+        <input class="checkbox" type="checkbox" name="displayPhotos" ng-model="data.displayPhotos" />Display Photos
 
-        <button type="submit" value="Submit" class='btn btn-primary btn-block' ng-disabled='shortlyForm.$invalid'>
+        <button type="submit" value="Submit" class='btn btn-primary' ng-disabled='shortlyForm.$invalid'>
         Search
         </button>
-
       </form>
-      
-
-      
+    </div>
+    
+    <div class="col-xs-3">
       <div>
         <!-- <img src="{{ data.userPhoto }}"> -->
         <span>data.userPhoto</span><br>
@@ -28,7 +31,7 @@
       
     </div>
     
-    <div class="col-xs-6">
+    <div class="col-xs-7">
       <div class="tweets ">
         <div class="tweet" ng-repeat='tweet in data.tweets'>
           <span>{{ tweet.text }}</span><br>
@@ -37,6 +40,10 @@
       </div>
       
     </div>
+  </div>
+  
+  
+  
   
   
 </div>
