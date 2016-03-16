@@ -27,13 +27,12 @@
         <span>data.userPhoto</span><br>
         <span>data.userName</span><br>
         <span>data.userDescription</span>
-      </div>
-      
+      </div>      
     </div>
     
     <div class="col-xs-7">
       <div class="tweets ">
-        <div class="tweet" ng-repeat='tweet in data.tweets'>
+        <div class="tweet" ng-repeat='tweet in data.tweets | filter:retweetFilterFn'>
           <span>{{ tweet.text }}</span><br>
           <img src="{{ tweet.img }}">
         </div>
@@ -41,9 +40,5 @@
       
     </div>
   </div>
-  
-  
-  
-  
-  
+
 </div>

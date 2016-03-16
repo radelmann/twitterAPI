@@ -30,4 +30,8 @@ angular.module('twitterAPI.tweets', [])
         $scope.data.tweets = data;
       });
     };
+
+    $scope.retweetFilterFn = function(tweet) {
+      return tweet.retweet_count >= parseInt($scope.data.retweetFilter);
+    };
   });
