@@ -9,6 +9,8 @@ angular.module('twitterAPI.services', [])
       })
       .then(function(resp) {
         return JSON.parse(resp.data);
+      }, function(err) {
+        return [];
       });
   };
 
