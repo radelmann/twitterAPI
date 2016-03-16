@@ -1,13 +1,21 @@
+body {
+  margin-top: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
 .tweet {
-  width:450px;
+  width:100%;
 }
 
 .tweet img {
-  width:450px;
+  width:100%;
 }
 
 input {
-  width:200px;
+  /*width:20%;*/
 }
 
 .checkbox {
@@ -16,5 +24,27 @@ input {
 }
 
 .form-control {
+  /*width:33%;*/
+}
+
+small {
+  /*white-space: nowrap;*/
+}
+
+.user-info {
+  margin-top: 10px;
+}
+
+.user-info img {
+  margin-right: 5px;
+  border: thin solid lightgray;
+  border-radius: 5px;
+}
+
+#screenName {
   width:200px;
+}
+
+#retweetFilter {
+  width:50px;
 }

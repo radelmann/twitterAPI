@@ -6,6 +6,7 @@ angular.module('twitterAPI.tweets', [])
     $scope.data.userName = '';
     $scope.data.userDescription = '';
     $scope.data.userPhoto = '';
+    $scope.data.userHandle = '';
     $scope.data.screenName = '';
     $scope.data.retweetFilter = 0;
     $scope.data.displayPhotos = true;
@@ -19,11 +20,14 @@ angular.module('twitterAPI.tweets', [])
           for (var i = 0; i < data.length; i++) {
             if (data[i].entities.media) {
               data[i].img = data[i].entities.media[0].media_url;
+            } else {
+              data[i].img = "";
             }
           }
         }
 
         $scope.data.userName = data[0].user.name;
+        $scope.data.userHandle = '@' + data[0].user.screen_name;
         $scope.data.userPhoto = data[0].user.profile_image_url;
         $scope.data.userDescription = data[0].user.description;
 
