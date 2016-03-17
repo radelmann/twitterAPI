@@ -3,11 +3,11 @@ angular.module('twitterAPI', [
     'twitterAPI.tweets',
     'ngRoute'
   ])
-  .config(function($routeProvider, $httpProvider) {
+  .config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: '/app/tweets/tweets.html',
         controller: 'tweetsController'
       })
       .otherwise('/');
-  });
+  }]);
