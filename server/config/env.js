@@ -1,5 +1,6 @@
 module.exports = {
   "port": process.env.TW_API_PROD_PORT || 3000,
+  "version": process.env.VERSION || 'DEV',
 
   "twitter": {
     "consumerKey": process.env.TW_API_CONSUMER_KEY,
