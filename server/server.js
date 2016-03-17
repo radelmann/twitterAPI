@@ -19,3 +19,5 @@ require('./routes.js')(app);
 app.listen(env.port, function() {
   console.log('listening on port...' + env.port);
 });
+
+module.exports = app;

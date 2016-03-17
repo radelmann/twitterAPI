@@ -4,14 +4,17 @@
   "description": "twitter api & angular project",
   "main": "server/server.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha server/spec/api.js"
   },
   "author": "radelmann",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
     "express": "^4.13.4",
+    "mocha": "^2.4.5",
     "morgan": "^1.7.0",
+    "supertest": "^1.2.0",
     "twitter-node-client": "0.0.6"
   }
 }
