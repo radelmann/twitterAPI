@@ -1,5 +1,5 @@
 angular.module('twitterAPI.tweets', [])
-  .controller('tweetsController', ['$scope', 'tweets'function($scope, tweets) {
+  .controller('tweetsController', ['$scope', 'tweets', function($scope, tweets) {
     $scope.data = {};
     $scope.data.tweets;
 

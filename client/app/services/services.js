@@ -1,8 +1,9 @@
 angular.module('twitterAPI.services', [])
 
-.factory('tweets', ['http', function($http) {
+.factory('tweets', ['$http', function($http) {
 
   var get = function(screenName) {
+    screenName = _.escape(screenName);
     return $http({
         method: 'GET',
         url: '/api/get/' + screenName
