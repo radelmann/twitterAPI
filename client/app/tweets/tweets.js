@@ -1,5 +1,5 @@
 angular.module('twitterAPI.tweets', [])
-  .controller('tweetsController', function($scope, tweets) {
+  .controller('tweetsController', ['$scope', 'tweets'function($scope, tweets) {
     $scope.data = {};
     $scope.data.tweets;
 
@@ -46,4 +46,4 @@ angular.module('twitterAPI.tweets', [])
       }
       return true;
     };
-  });
+  }]);

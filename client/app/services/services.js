@@ -1,11 +1,11 @@
 angular.module('twitterAPI.services', [])
 
-.factory('tweets', function($http) {
+.factory('tweets', ['http', function($http) {
 
   var get = function(screenName) {
     return $http({
         method: 'GET',
-        url: '/api/get/'+screenName
+        url: '/api/get/' + screenName
       })
       .then(function(resp) {
         return JSON.parse(resp.data);
@@ -17,4 +17,4 @@ angular.module('twitterAPI.services', [])
   return {
     get: get
   };
-});
+}]);
