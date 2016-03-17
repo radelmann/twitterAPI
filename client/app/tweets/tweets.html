@@ -30,10 +30,10 @@
     <div class="clearfix col-xs-7">
       <div class="tweets ">
         <span ng-show="data.tweets == undefined || data.tweets.length==0">User not found or no data to display</span>
-        <div class="tweet" ng-repeat='tweet in data.tweets | filter:retweetFilterFn'>
+        <div class="tweet" ng-repeat='tweet in data.tweets | filter:retweetFilterFn' ng-hide="tweet.img != '' &&  data.displayPhotos == false">
           <span>{{ tweet.text }}</span><br>
           
-          <img src="{{ tweet.img }}" ng-hide="tweet.img == '' ||  data.displayPhotos == false" />
+          <img src="{{ tweet.img }}" ng-hide="tweet.img == ''" />
           <hr>
         </div>
       </div>
